@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow&family=Mulish:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      #container {
+        height: 700px;
+        width: 25%;
+        margin: auto;
+      }
+
+      .hr-sect {
+        display: flex;
+        flex-basis: 100%;
+        align-items: center;
+        color: rgba(0, 0, 0, 0.35);
+        margin: 8px 0px;
+      }
+      .hr-sect::before,
+      .hr-sect::after {
+        content: "";
+        flex-grow: 1;
+        background: rgba(185, 183, 183, 0.35);
+        height: 1.2px;
+        font-size: 0px;
+        line-height: 0px;
+        margin: 0px 8px;
+      }
+
+      #head {
+        font-weight: 400;
+        color: black;
+        font-size: 18px;
+      }
+
+      #use {
+        text-align: center;
+        color: rgb(168, 168, 168);
+        font-size: 11px;
+        margin-top: 20px;
+      }
+
+      input {
+        text-align: center;
+        margin: auto;
+        margin-top: 5px;
+        width: 90%;
+        padding: 10px;
+        display: block;
+        border-radius: 5px;
+        border: 0.5px solid rgba(185, 183, 183, 0.35);
+        color: rgb(151, 151, 151);
+        font-size: 11px;
+      }
+
+      .google {
+        font-family: arial;
+        margin: auto;
+        margin-top: 20px;
+        width: 90%;
+        padding: 8px;
+        display: block;
+        border-radius: 5px;
+        border: 0.5px solid rgba(185, 183, 183, 0.35);
+        color: rgb(164, 164, 164);
+        font-size: 11px;
+        display: flex;
+        justify-content: flex-start;
+      }
+
+      .fb {
+        margin-top: 30px;
+      }
+
+      .subhead {
+        font-size: 9px;
+        padding: 5px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-top: 20px;
+      }
+
+      #namebox {
+        display: flex;
+        justify-content: flex-start;
+        gap: 10px;
+      }
+
+      #namebox > div {
+        width: 45%;
+        margin-left: 5px;
+      }
+
+      .blkin {
+        margin-top: -8px;
+      }
+
+      .first {
+        margin-left: -4px;
+        margin-top: 20px;
+      }
+
+      #gender {
+        margin: auto;
+        margin-top: 5px;
+        width: 98%;
+        padding: 10px;
+        display: block;
+        border-radius: 5px;
+        border: 0.5px solid rgba(185, 183, 183, 0.35);
+        color: grey;
+        font-size: 11px;
+      }
+
+      option {
+          margin : 10px;
+      }
+
+      img {
+          height: 17px;
+          width: 17px;
+          border-radius: 1px;
+          margin-left: 0px;
+      }
+
+      span {
+          display: block;
+          align-self: center;
+          margin: auto;
+          margin-left: 94px;
+      }
+
+      #check {
+          border: none;
+          margin: 0px;
+          padding-top: 0px;
+          width: 20px;
+          border-radius: 50%;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h3 class="hr-sect" id="head">Sign Up with CaratLane</h3>
+      <p id="use">USING</p>
+        <div class="google">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZ-cRaRj4QWiJoiCC8xv1D1XWlXANNWNKiuw&usqp=CAU"
+            alt=""><span>Facebook</span>
+        </div>
+        <div class="google">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhwFXc0_kkWCXzk1xUiYZbiMEGg89f60qq6Q&usqp=CAU" alt=""><span>Google</span>
+        </div>
+      <p id="use">OR</p>
+      <p class="subhead">Enter Email</p>
+      <input class="blkin" type="email" />
+      <div id="namebox">
+        <div>
+          <p class="subhead first">First Name</p>
+          <input class="blkin" type="text" />
+        </div>
+        <div>
+          <p class="subhead first">Last Name</p>
+          <input class="blkin" type="text" />
+        </div>
+      </div>
+      <p class="subhead">Enter Password</p>
+      <input class="blkin" type="password" />
+      <p class="subhead">Confirm Password</p>
+      <input class="blkin" type="password" />
+      <p class="subhead">Select Gender</p>
+      <select placeholder="Gender" id="gender">
+        <option value="" disabled selected hidden>Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+      <div id="namebox">
+        <div>
+          <p class="subhead first">ISD Code</p>
+          <input class="blkin" type="number" />
+        </div>
+        <div>
+          <p class="subhead first">Mobile Number</p>
+          <input class="blkin" type="number" />
+        </div>
+      </div>
+      <div class="google">
+          <input id="check" type="checkbox">
+          <span>Opt for WhatsApp Updates on mobile number</span>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRToTk9E-SINBQFI2eWNJeo3Rg8_tl0M6Hnw&usqp=CAU" alt="">
+      </div>
+    </div>
+  </body>
+</html>

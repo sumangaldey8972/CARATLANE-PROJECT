@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ring Page</title>
+</head>
+<style>
+    img{
+        width:100%;
+    }
+    select{
+        border: none;
+        background-color: #4f3267;
+        color: white;
+        padding:20px 71.3px;
+        cursor: pointer;
+    }
+    #filter{
+        width: 100%;
+        height: 100px;
+        background-color:#ebccf8;
+    }
+    #filter button{
+        border: none;
+        padding: 15px;
+        margin-top:27px;
+        margin-left: 20px;
+        border-radius: 10px;
+        cursor: pointer;
+        background-color: white;
+    }
+    #container{
+        display: grid;
+        margin:25px;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows:auto;
+        gap: 30px;
+    }
+    #container img{
+        height: 350px;
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+        margin-top: 20px;
+        border-radius: 10px;
+    }
+    span{
+        margin:10px 15px 10px 0px;
+        font-size: 25px;
+        font-weight: bold;
+        justify-content:space-evenly;
+    }
+    p{
+        justify-content: left;
+        color: grey;
+        font-size: 18px;
+        margin-top: 5px;
+    }
+    #container button{
+        padding: 10px;
+        border-radius: 10px;
+        border: none;
+        background-color: teal;
+        color:white;
+        cursor:pointer;
+        margin-right: 60px;
+    }
+</style>
+<body>
+    <div>
+        <div>
+            <img src="https://banner.caratlane.com/live-images/59ff03f1cef44e2dbda85fb7064b6bd2.webp" alt="">
+        </div>
+        <div  id="select">
+            <select>
+                <option>PRICE</option>
+            </select>
+            <select>
+                <option>PRODUCT TYPE</option>
+            </Select>
+            <select>
+                <option>MATERIAL</option>
+            </select>
+            <select>
+                <option>METAL</option>
+            </select>
+            <select>
+                <option>WEIGHT RANGES</option>
+            </select>
+            <select>
+                <option>SEE MORE FILTERS</option>
+            </select>
+        </div>
+        <div id="filter">
+            <button>All Rings</button>
+            <button>Try At Home</button>
+            <button>Designs in Store</button>
+            <button>Fast Delivery</button>
+        </div>
+    </div>
+    <div id="container">
+
+    </div>
+</body>
+</html>
+<script>
+    ringData=[{img : "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTeSqc67Rp9K3msqzFukgfS3QQyIAkyGWyatQTLSpG2zFPI2wP6",
+    price : "₹1,24,163",
+    strprice : "₹1,24,163 ",
+    name:"Sunshine Solitaire Bridal Ring Set"},
+    {img : "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTeSqc67Rp9K3msqzFukgfS3QQyIAkyGWyatQTLSpG2zFPI2wP6" ,
+    price :" ₹1,24,163",
+    strprice : "₹1,24,163",
+    name:"Orla Elegant Solitaire Ring"},
+    {img : "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTeSqc67Rp9K3msqzFukgfS3QQyIAkyGWyatQTLSpG2zFPI2wP6" ,
+    price : 14500,
+    strprice : 18500,
+    name:"Sunshine Solitaire Bridal Ring Set"},
+    {img :" https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTeSqc67Rp9K3msqzFukgfS3QQyIAkyGWyatQTLSpG2zFPI2wP6" ,
+    price : 14500,
+    strprice : 18500,
+    name:"Sunshine Solitaire Bridal Ring Set"},
+    {img : "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTeSqc67Rp9K3msqzFukgfS3QQyIAkyGWyatQTLSpG2zFPI2wP6",
+    price : "$14500",
+    strprice : "$18500",
+    name:"Sunshine Solitaire Bridal Ring Set"},
+    {img : "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTeSqc67Rp9K3msqzFukgfS3QQyIAkyGWyatQTLSpG2zFPI2wP6" ,
+    price : 14500,
+    strprice : 18500,
+    name:"Orla Elegant Solitaire Ring"},
+    {img : "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTeSqc67Rp9K3msqzFukgfS3QQyIAkyGWyatQTLSpG2zFPI2wP6" ,
+    price : 14500,
+    strprice : 18500,
+    name:"Sunshine Solitaire Bridal Ring Set"},
+    {img :" https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTeSqc67Rp9K3msqzFukgfS3QQyIAkyGWyatQTLSpG2zFPI2wP6" ,
+    price : 14500,
+    strprice : 18500,
+    name:"Sunshine Solitaire Bridal Ring Set"},
+    {img : "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTeSqc67Rp9K3msqzFukgfS3QQyIAkyGWyatQTLSpG2zFPI2wP6",
+    price : "$14500",
+    strprice : "$18500",
+    name:"Sunshine Solitaire Bridal Ring Set"},
+    {img : "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTeSqc67Rp9K3msqzFukgfS3QQyIAkyGWyatQTLSpG2zFPI2wP6" ,
+    price : 14500,
+    strprice : 18500,
+    name:"Orla Elegant Solitaire Ring"},
+    {img : "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTeSqc67Rp9K3msqzFukgfS3QQyIAkyGWyatQTLSpG2zFPI2wP6" ,
+    price : 14500,
+    strprice : 18500,
+    name:"Sunshine Solitaire Bridal Ring Set"},
+    {img :" https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTeSqc67Rp9K3msqzFukgfS3QQyIAkyGWyatQTLSpG2zFPI2wP6" ,
+    price : 14500,
+    strprice : 18500,
+    name:"Sunshine Solitaire Bridal Ring Set"},
+    {img : "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTeSqc67Rp9K3msqzFukgfS3QQyIAkyGWyatQTLSpG2zFPI2wP6",
+    price : "$14500",
+    strprice : "$18500",
+    name:"Sunshine Solitaire Bridal Ring Set"},
+    {img : "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTeSqc67Rp9K3msqzFukgfS3QQyIAkyGWyatQTLSpG2zFPI2wP6" ,
+    price : 15500,
+    strprice : 18500,
+    name:"Orla Elegant Solitaire Ring"},
+    {img : "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTeSqc67Rp9K3msqzFukgfS3QQyIAkyGWyatQTLSpG2zFPI2wP6" ,
+    price : 14500,
+    strprice : 18500,
+    name:"Sunshine Solitaire Bridal Ring Set"},
+    {img :" https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTeSqc67Rp9K3msqzFukgfS3QQyIAkyGWyatQTLSpG2zFPI2wP6" ,
+    price : 14500,
+    strprice : 18500,
+    name:"Sunshine Solitaire Bridal Ring Set"}];
+
+    ringData.map(function(el){
+        var div = document.createElement("div");
+        var pic=document.createElement("div");
+        var image=document.createElement("img");
+        image.src=el.img;
+        var productprice=document.createElement("span");
+        productprice.innerText=el.price;
+        var striked=document.createElement("span");
+        striked.innerText=el.strprice;
+        striked.style.textDecoration="line-through"
+        striked.style.fontWeight="100"
+        var itemname=document.createElement("p");
+        itemname.innerText=el.name;
+        var btn1=document.createElement("button");
+        btn1.innerText="Add To Cart"
+        var btn2=document.createElement("button");
+        btn2.innerText="Add to WishList"
+        
+        pic.append(image);
+
+        div.append(pic,productprice,striked,itemname,btn1,btn2);
+        document.querySelector("#container").append(div);
+    })
+
+
+</script>

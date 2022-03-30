@@ -65,6 +65,19 @@
         cursor:pointer;
         margin-right: 60px;
     }
+    @media all and (min-width: 200px) and (max-width: 400px) {
+        #container {
+          grid-template-columns: repeat(1, 1fr);
+        }
+        #filter{
+        width:100%;
+        height: 200px;
+        background-color:#ebccf8;
+        }
+        select{
+            width: 100%;
+        }
+      }
 </style>
 <body>
     <div>
@@ -99,72 +112,104 @@
         </div>
     </div>
     <div id="container">
-
     </div>
 </body>
 </html>
 <script>
-    ringData=[{img : "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTeSqc67Rp9K3msqzFukgfS3QQyIAkyGWyatQTLSpG2zFPI2wP6",
+    cart=JSON.parse(localStorage.getItem("cartData")) || [];
+    ringData=[{img : "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/R/JR06976-1YP900_11_listfront.jpg",
     price : "₹1,24,163",
     strprice : "₹1,24,163 ",
     name:"Sunshine Solitaire Bridal Ring Set"},
-    {img : "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTeSqc67Rp9K3msqzFukgfS3QQyIAkyGWyatQTLSpG2zFPI2wP6" ,
+    {img : "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/R/JR06977-1YP9P0_12_listhover.jpg" ,
     price :" ₹1,24,163",
     strprice : "₹1,24,163",
     name:"Orla Elegant Solitaire Ring"},
-    {img : "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTeSqc67Rp9K3msqzFukgfS3QQyIAkyGWyatQTLSpG2zFPI2wP6" ,
+    {img : "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/R/JR06975-1YP9RS_12_listhover.jpg" ,
     price : 14500,
     strprice : 18500,
     name:"Sunshine Solitaire Bridal Ring Set"},
-    {img :" https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTeSqc67Rp9K3msqzFukgfS3QQyIAkyGWyatQTLSpG2zFPI2wP6" ,
+    {img :" https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/R/JR06979-1YP9P0_12_listhover.jpg" ,
     price : 14500,
     strprice : 18500,
     name:"Sunshine Solitaire Bridal Ring Set"},
-    {img : "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTeSqc67Rp9K3msqzFukgfS3QQyIAkyGWyatQTLSpG2zFPI2wP6",
+    {img : "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//S/R/SR02845-YGP900_12_listhover.jpg",
     price : "$14500",
     strprice : "$18500",
     name:"Sunshine Solitaire Bridal Ring Set"},
-    {img : "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTeSqc67Rp9K3msqzFukgfS3QQyIAkyGWyatQTLSpG2zFPI2wP6" ,
+    {img : "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//S/R/SR02158-WGP900_12_listhover.jpg" ,
     price : 14500,
     strprice : 18500,
     name:"Orla Elegant Solitaire Ring"},
-    {img : "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTeSqc67Rp9K3msqzFukgfS3QQyIAkyGWyatQTLSpG2zFPI2wP6" ,
+    {img : "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/R/JR00323-YGP900_12_listhover.jpg" ,
     price : 14500,
     strprice : 18500,
     name:"Sunshine Solitaire Bridal Ring Set"},
-    {img :" https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTeSqc67Rp9K3msqzFukgfS3QQyIAkyGWyatQTLSpG2zFPI2wP6" ,
+    {img :" https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/R/JR02626-YGP900_12_listhover.jpg" ,
     price : 14500,
     strprice : 18500,
     name:"Sunshine Solitaire Bridal Ring Set"},
-    {img : "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTeSqc67Rp9K3msqzFukgfS3QQyIAkyGWyatQTLSpG2zFPI2wP6",
+    {img : "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//S/R/SR00152-WGP900_11_listfront.jpg",
     price : "$14500",
     strprice : "$18500",
     name:"Sunshine Solitaire Bridal Ring Set"},
-    {img : "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTeSqc67Rp9K3msqzFukgfS3QQyIAkyGWyatQTLSpG2zFPI2wP6" ,
+    {img : "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/R/JR03107-YGP900_11_listfront.jpg" ,
     price : 14500,
     strprice : 18500,
     name:"Orla Elegant Solitaire Ring"},
-    {img : "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTeSqc67Rp9K3msqzFukgfS3QQyIAkyGWyatQTLSpG2zFPI2wP6" ,
+    {img : "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/R/JR05109-1YP900_11_listfront.jpg" ,
     price : 14500,
     strprice : 18500,
     name:"Sunshine Solitaire Bridal Ring Set"},
-    {img :" https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTeSqc67Rp9K3msqzFukgfS3QQyIAkyGWyatQTLSpG2zFPI2wP6" ,
+    {img :" https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/R/JR01790-RGP900_11_listfront.jpg" ,
     price : 14500,
     strprice : 18500,
     name:"Sunshine Solitaire Bridal Ring Set"},
-    {img : "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTeSqc67Rp9K3msqzFukgfS3QQyIAkyGWyatQTLSpG2zFPI2wP6",
+    {img : "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/R/JR05874-1YP900_11_listfront.jpg",
     price : "$14500",
     strprice : "$18500",
     name:"Sunshine Solitaire Bridal Ring Set"},
-    {img : "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTeSqc67Rp9K3msqzFukgfS3QQyIAkyGWyatQTLSpG2zFPI2wP6" ,
+    {img : "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//U/R/UR00067-PT0000_11_listfront.jpg" ,
     price : 15500,
     strprice : 18500,
     name:"Orla Elegant Solitaire Ring"},
-    {img : "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTeSqc67Rp9K3msqzFukgfS3QQyIAkyGWyatQTLSpG2zFPI2wP6" ,
+    {img : "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/R/JR04560-RGP900_11_listfront.jpg" ,
     price : 14500,
     strprice : 18500,
     name:"Sunshine Solitaire Bridal Ring Set"},
-    {img :" https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTeSqc67Rp9K3msqzFukgfS3QQyIAkyGWyatQTLSpG2zFPI2wP6" ,
+    {img :" https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/R/JR04540-RGP900_11_listfront.jpg" ,
+    price : 14500,
+    strprice : 18500,
+    name:"Sunshine Solitaire Bridal Ring Set"},
+    {img : "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/R/JR06976-1YP900_11_listfront.jpg",
+    price : "₹1,24,163",
+    strprice : "₹1,24,163 ",
+    name:"Sunshine Solitaire Bridal Ring Set"},
+    {img : "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/R/JR06977-1YP9P0_12_listhover.jpg" ,
+    price :" ₹1,24,163",
+    strprice : "₹1,24,163",
+    name:"Orla Elegant Solitaire Ring"},
+    {img : "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/R/JR06975-1YP9RS_12_listhover.jpg" ,
+    price : 14500,
+    strprice : 18500,
+    name:"Sunshine Solitaire Bridal Ring Set"},
+    {img :" https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/R/JR06979-1YP9P0_12_listhover.jpg" ,
+    price : 14500,
+    strprice : 18500,
+    name:"Sunshine Solitaire Bridal Ring Set"},
+    {img : "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//S/R/SR02845-YGP900_12_listhover.jpg",
+    price : "$14500",
+    strprice : "$18500",
+    name:"Sunshine Solitaire Bridal Ring Set"},
+    {img : "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//S/R/SR02158-WGP900_12_listhover.jpg" ,
+    price : 14500,
+    strprice : 18500,
+    name:"Orla Elegant Solitaire Ring"},
+    {img : "https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/R/JR00323-YGP900_12_listhover.jpg" ,
+    price : 14500,
+    strprice : 18500,
+    name:"Sunshine Solitaire Bridal Ring Set"},
+    {img :" https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/R/JR02626-YGP900_12_listhover.jpg" ,
     price : 14500,
     strprice : 18500,
     name:"Sunshine Solitaire Bridal Ring Set"}];
@@ -183,7 +228,10 @@
         var itemname=document.createElement("p");
         itemname.innerText=el.name;
         var btn1=document.createElement("button");
-        btn1.innerText="Add To Cart"
+        btn1.innerText="Add To Cart";
+        btn1.addEventListener("click",function(){
+            cartbutton(el);
+        })
         var btn2=document.createElement("button");
         btn2.innerText="Add to WishList"
         
@@ -192,6 +240,11 @@
         div.append(pic,productprice,striked,itemname,btn1,btn2);
         document.querySelector("#container").append(div);
     })
+    function cartbutton(el)
+    {
+        cart.push(el);
+        localStorage.setItem("cartData",JSON.stringify(cart));
+    }
 
 
 </script>
